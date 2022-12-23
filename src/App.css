@@ -115,7 +115,7 @@ form button {
   transition: all 0.3s ease;
 }
 form button:hover {
-  background: #6699CC;
+  background: #46698C;
   color: white;
 }
 .task-container {
