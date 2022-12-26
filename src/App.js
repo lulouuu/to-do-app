@@ -11,10 +11,6 @@ function App() {
   const [filter, setFilter] = useState("All");
   const [filteredTasks, setFilteredTasks] = useState([]);
 
-  useEffect(() => {
-    handleFilteredTasks();
-  }, [filter, tasks]);
-
   const handleFilteredTasks = () => {
     switch(filter) {
       case 'completed': setFilteredTasks(tasks.filter((task) => task.completed))
@@ -26,6 +22,10 @@ function App() {
         break;
     }
   }
+
+  useEffect(() => {
+    handleFilteredTasks();
+  }, [filter, tasks]);
 
   return (
     <div className="App">
