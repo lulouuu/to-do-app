@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 //component import
 import Form from './components/Form';
