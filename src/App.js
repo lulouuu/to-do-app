@@ -11,6 +11,11 @@ function App() {
   const [filter, setFilter] = useState("All");
   const [filteredTasks, setFilteredTasks] = useState([]);
 
+  useEffect(() => {
+    handleFilteredTasks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter, tasks]);
+
   const handleFilteredTasks = () => {
     switch(filter) {
       case 'completed': setFilteredTasks(tasks.filter((task) => task.completed))
@@ -22,10 +27,6 @@ function App() {
         break;
     }
   }
-
-  useEffect(() => {
-    handleFilteredTasks();
-  }, [filter, tasks]);
 
   return (
     <div className="App">
